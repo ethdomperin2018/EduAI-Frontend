@@ -4,9 +4,9 @@ import { CheckCircle, BookOpen, Users, Trophy } from "lucide-react"
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen flex-col">
+    <div className="flex min-h-screen flex-col px-2">
       <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="container flex h-14 items-center justify-between">
+        <div className="flex h-14 items-center justify-between">
           <div className="flex items-center">
             <Link href="/" className="flex items-center space-x-2">
               <span className="text-xl font-bold text-primary">EduLearn Pro</span>
@@ -35,7 +35,7 @@ export default function Home() {
       </header>
       <main className="flex-1">
         <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48">
-          <div className="container flex flex-col items-center justify-center px-4 text-center md:px-6">
+          <div className="flex flex-col items-center justify-center px-4 text-center md:px-6">
             <div className="space-y-4">
               <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
                 Transform Your Learning Journey
@@ -72,7 +72,7 @@ export default function Home() {
         </section>
 
         <section className="w-full border-t bg-muted/50 py-12 md:py-24 lg:py-32">
-          <div className="container px-4 md:px-6">
+          <div className="px-4 md:px-6">
             <div className="grid gap-12 lg:grid-cols-3">
               <div className="flex flex-col items-center space-y-4 text-center">
                 <div className="rounded-full bg-primary/10 p-3">
@@ -106,7 +106,7 @@ export default function Home() {
         </section>
 
         <section className="w-full py-12 md:py-24 lg:py-32">
-          <div className="container px-4 md:px-6">
+          <div className="px-4 md:px-6">
             <div className="mx-auto grid max-w-5xl items-center gap-6 py-12 lg:grid-cols-2 lg:gap-12">
               <div className="flex flex-col justify-center space-y-4">
                 <div className="space-y-2">
@@ -147,7 +147,7 @@ export default function Home() {
         </section>
       </main>
       <footer className="border-t py-12 md:py-16">
-        <div className="container flex flex-col items-center justify-between gap-8 px-4 md:px-6 md:flex-row">
+        <div className="flex flex-col items-center justify-between gap-8 px-4 md:px-6 md:flex-row">
           <div className="flex flex-col items-center gap-4 md:items-start md:gap-2">
             <Link href="/" className="flex items-center space-x-2">
               <span className="text-lg font-bold">EduLearn Pro</span>
