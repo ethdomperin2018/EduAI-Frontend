@@ -5,50 +5,46 @@ export default function Home() {
   return (
     <div className="flex min-h-screen flex-col">
       <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="container flex h-14 items-center">
-          <div className="mr-4 flex">
-            <Link href="/" className="mr-6 flex items-center space-x-2">
+        <div className="container flex h-14 items-center justify-between">
+          <div className="flex items-center">
+            <Link href="/" className="flex items-center space-x-2">
               <span className="font-bold">Educational Platform</span>
             </Link>
           </div>
-          <div className="flex flex-1 items-center justify-end space-x-2">
-            <nav className="flex items-center space-x-2">
-              <Link href="/login">
-                <Button variant="outline">Login</Button>
-              </Link>
-              <Link href="/register">
-                <Button>Register</Button>
-              </Link>
-            </nav>
-          </div>
+          <nav className="flex items-center space-x-2">
+            <Link href="/login">
+              <Button variant="outline">Login</Button>
+            </Link>
+            <Link href="/register">
+              <Button>Register</Button>
+            </Link>
+          </nav>
         </div>
       </header>
       <main className="flex-1">
         <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48">
-          <div className="container px-4 md:px-6">
-            <div className="flex flex-col items-center space-y-4 text-center">
-              <div className="space-y-2">
-                <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
-                  Welcome to the Educational Platform
-                </h1>
-                <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
-                  An interactive learning experience with personalized avatar guidance
-                </p>
-              </div>
-              <div className="space-x-4">
-                <Link href="/register">
-                  <Button size="lg">Get Started</Button>
-                </Link>
-                <Link href="/about">
-                  <Button variant="outline" size="lg">
-                    Learn More
-                  </Button>
-                </Link>
-              </div>
+          <div className="container flex flex-col items-center justify-center px-4 text-center md:px-6">
+            <div className="space-y-4">
+              <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
+                Welcome to the Educational Platform
+              </h1>
+              <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
+                An interactive learning experience with personalized avatar guidance
+              </p>
+            </div>
+            <div className="mt-6 space-x-4">
+              <Link href="/register">
+                <Button size="lg">Get Started</Button>
+              </Link>
+              <Link href="/about">
+                <Button variant="outline" size="lg">
+                  Learn More
+                </Button>
+              </Link>
             </div>
           </div>
         </section>
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-muted">
+        <section className="w-full bg-muted py-12 md:py-24 lg:py-32">
           <div className="container px-4 md:px-6">
             <div className="mx-auto grid max-w-5xl items-center gap-6 py-12 lg:grid-cols-2 lg:gap-12">
               <div className="flex flex-col justify-center space-y-4">
