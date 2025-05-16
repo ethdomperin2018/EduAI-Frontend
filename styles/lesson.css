@@ -1,0 +1,328 @@
+/* Lesson Page Styles */
+.lesson-header {
+  background-color: var(--background-color);
+  box-shadow: var(--box-shadow);
+  padding: 0.75rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.lesson-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.lesson-navigation {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.lesson-title {
+  text-align: center;
+}
+
+.lesson-title h2 {
+  margin-bottom: 0;
+  font-size: 1.25rem;
+}
+
+.lesson-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Dual Screen Layout */
+.lesson-container {
+  padding: 1.5rem 0;
+}
+
+.dual-screen-layout {
+  display: flex;
+  gap: 1.5rem;
+  height: calc(100vh - 180px);
+  min-height: 500px;
+}
+
+/* Avatar Screen (Left) */
+.avatar-screen {
+  flex: 0 0 35%;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--background-color);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--box-shadow);
+}
+
+.avatar-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primary-light);
+  padding: 1.5rem;
+  overflow: hidden;
+}
+
+.avatar-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatar-placeholder img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.avatar-controls {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: var(--background-color);
+  border-top: 1px solid var(--border-color);
+}
+
+/* Content Screen (Right) */
+.content-screen {
+  flex: 0 0 65%;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--background-color);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--box-shadow);
+}
+
+.content-tabs {
+  display: flex;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.tab-btn {
+  flex: 1;
+  padding: 1rem;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--text-light);
+  transition: var(--transition);
+}
+
+.tab-btn:hover {
+  background-color: var(--background-light);
+}
+
+.tab-btn.active {
+  color: var(--primary-color);
+  border-bottom: 3px solid var(--primary-color);
+}
+
+.content-area {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+.tab-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 1.5rem;
+  display: none;
+  overflow-y: auto;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+/* Video Tab */
+.video-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#lessonVideo {
+  width: 100%;
+  max-height: 80%;
+  border-radius: var(--border-radius);
+  background-color: #000;
+}
+
+.video-controls {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+/* Exercise Tab */
+.exercise-container {
+  width: 100%;
+  height: 100%;
+}
+
+.exercise-placeholder {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--text-light);
+}
+
+/* Document Tab */
+.document-container {
+  width: 100%;
+  height: calc(100% - 50px);
+  overflow: auto;
+  position: relative;
+}
+
+.document-placeholder {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--text-light);
+}
+
+.document-upload {
+  margin-top: 1.5rem;
+}
+
+.document-annotation-tools {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  background-color: var(--background-light);
+  border-top: 1px solid var(--border-color);
+}
+
+.annotation-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--background-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.annotation-btn:hover {
+  background-color: var(--primary-light);
+}
+
+.annotation-btn.active {
+  background-color: var(--primary-color);
+}
+
+.annotation-btn.active img {
+  filter: brightness(0) invert(1);
+}
+
+.annotation-btn img {
+  width: 20px;
+  height: 20px;
+}
+
+/* Progress Footer */
+.progress-footer {
+  background-color: var(--background-color);
+  padding: 0.75rem 0;
+  position: sticky;
+  bottom: 0;
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.lesson-progress {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.progress-text {
+  font-weight: 600;
+  min-width: 120px;
+}
+
+.progress-bar {
+  flex: 1;
+  height: 10px;
+  background-color: var(--border-color);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.progress {
+  height: 100%;
+  background-color: var(--primary-color);
+  border-radius: 5px;
+  transition: width 0.3s ease;
+}
+
+.progress-percentage {
+  min-width: 50px;
+  text-align: right;
+  font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .dual-screen-layout {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .avatar-screen,
+  .content-screen {
+    flex: none;
+    width: 100%;
+  }
+
+  .avatar-screen {
+    height: 300px;
+  }
+
+  .content-screen {
+    height: 500px;
+  }
+}
+
+@media (max-width: 768px) {
+  .lesson-header .container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .lesson-navigation {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .lesson-actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+}

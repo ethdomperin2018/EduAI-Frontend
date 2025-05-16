@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson - Educational Platform for Kids</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/lesson.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="lesson-header">
+        <div class="container">
+            <div class="logo">
+                <img src="assets/images/logo.svg" alt="Educational Platform Logo">
+                <h1>KidsLearn</h1>
+            </div>
+            <div class="lesson-navigation">
+                <button id="prevLessonBtn" class="btn btn-outline btn-icon">
+                    <img src="assets/icons/arrow-left.svg" alt="Previous">
+                    <span>Previous</span>
+                </button>
+                <div class="lesson-title">
+                    <h2 id="lessonTitle">Lesson: Letter A</h2>
+                </div>
+                <button id="nextLessonBtn" class="btn btn-outline btn-icon">
+                    <span>Next</span>
+                    <img src="assets/icons/arrow-right.svg" alt="Next">
+                </button>
+            </div>
+            <div class="lesson-actions">
+                <button id="fullscreenBtn" class="btn btn-icon">
+                    <img src="assets/icons/fullscreen.svg" alt="Fullscreen">
+                </button>
+                <button id="exitLessonBtn" class="btn btn-outline">Exit Lesson</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="lesson-container" id="lessonContainer">
+        <div class="dual-screen-layout">
+            <!-- Left Screen - Avatar -->
+            <div class="avatar-screen">
+                <div class="avatar-container" id="avatarContainer">
+                    <!-- Avatar will be loaded here -->
+                    <div class="avatar-placeholder">
+                        <img src="assets/mascots/default.svg" alt="Learning Mascot" id="avatarImage">
+                    </div>
+                </div>
+                <div class="avatar-controls">
+                    <button id="repeatBtn" class="btn btn-secondary btn-sm">
+                        <img src="assets/icons/repeat.svg" alt="Repeat">
+                        <span>Repeat</span>
+                    </button>
+                    <button id="helpBtn" class="btn btn-secondary btn-sm">
+                        <img src="assets/icons/help.svg" alt="Help">
+                        <span>Help Me</span>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Right Screen - Content -->
+            <div class="content-screen">
+                <div class="content-tabs">
+                    <button class="tab-btn active" data-tab="video">Video</button>
+                    <button class="tab-btn" data-tab="exercise">Exercise</button>
+                    <button class="tab-btn" data-tab="document">Document</button>
+                </div>
+                
+                <div class="content-area">
+                    <!-- Video Tab Content -->
+                    <div class="tab-content active" id="videoTab">
+                        <div class="video-container">
+                            <video id="lessonVideo" controls>
+                                <source src="/placeholder.svg" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <div class="video-controls">
+                                <button id="playPauseBtn" class="btn btn-primary">
+                                    <img src="assets/icons/play.svg" alt="Play">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Exercise Tab Content -->
+                    <div class="tab-content" id="exerciseTab">
+                        <div class="exercise-container" id="exerciseContainer">
+                            <!-- Exercise content will be loaded here -->
+                            <div class="exercise-placeholder">
+                                <h3>Exercise will appear here</h3>
+                                <p>Complete the video lesson first</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Document Tab Content -->
+                    <div class="tab-content" id="documentTab">
+                        <div class="document-container" id="documentContainer">
+                            <!-- Document content will be loaded here -->
+                            <div class="document-placeholder">
+                                <h3>Document will appear here</h3>
+                                <p>Upload a document or continue with the lesson</p>
+                                <div class="document-upload">
+                                    <label for="documentUpload" class="btn btn-secondary">Upload Document</label>
+                                    <input type="file" id="documentUpload" accept=".pdf,.jpg,.jpeg,.png" hidden>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="document-annotation-tools" id="annotationTools">
+                            <button class="annotation-btn" data-tool="text">
+                                <img src="assets/icons/text.svg" alt="Text">
+                            </button>
+                            <button class="annotation-btn" data-tool="highlight">
+                                <img src="assets/icons/highlight.svg" alt="Highlight">
+                            </button>
+                            <button class="annotation-btn" data-tool="circle">
+                                <img src="assets/icons/circle.svg" alt="Circle">
+                            </button>
+                            <button class="annotation-btn" data-tool="underline">
+                                <img src="assets/icons/underline.svg" alt="Underline">
+                            </button>
+                            <button class="annotation-btn" data-tool="clear">
+                                <img src="assets/icons/clear.svg" alt="Clear">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="progress-footer">
+        <div class="container">
+            <div class="lesson-progress">
+                <div class="progress-text">Lesson Progress:</div>
+                <div class="progress-bar">
+                    <div class="progress" id="lessonProgressBar" style="width: 0%"></div>
+                </div>
+                <div class="progress-percentage" id="lessonProgressPercentage">0%</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/auth.ts"></script>
+    <script src="js/lesson.ts"></script>
+    <script src="js/avatar.ts"></script>
+    <script src="js/document-annotation.ts"></script>
+</body>
+</html>

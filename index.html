@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educational Platform for Kids</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header  rel="stylesheet">
+</head>
+<body>
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <img src="assets/images/logo.svg" alt="Educational Platform Logo">
+                <h1>KidsLearn</h1>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </nav>
+            <div class="auth-buttons">
+                <button id="loginBtn" class="btn btn-outline">Login</button>
+                <button id="registerBtn" class="btn btn-primary">Register</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h2>Fun Learning for Kids!</h2>
+                    <p>Interactive lessons with friendly mascots to guide your child's learning journey.</p>
+                    <button class="btn btn-primary btn-large">Get Started</button>
+                </div>
+                <div class="hero-image">
+                    <img src="assets/images/hero-mascot.svg" alt="Friendly learning mascot">
+                </div>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="container">
+                <h2 class="section-title">Why Choose Our Platform?</h2>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <img src="assets/icons/video.svg" alt="Video icon">
+                        </div>
+                        <h3>Fun Video Lessons</h3>
+                        <p>Engaging animated videos that make learning enjoyable</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <img src="assets/icons/mascot.svg" alt="Mascot icon">
+                        </div>
+                        <h3>Friendly Mascots</h3>
+                        <p>Interactive mascots that guide and encourage your child</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <img src="assets/icons/exercise.svg" alt="Exercise icon">
+                        </div>
+                        <h3>Interactive Exercises</h3>
+                        <p>Fun activities to reinforce learning concepts</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="courses-preview">
+            <div class="container">
+                <h2 class="section-title">Popular Courses</h2>
+                <div class="course-cards">
+                    <div class="course-card">
+                        <div class="course-image">
+                            <img src="assets/images/course-alphabet.svg" alt="Alphabet course">
+                        </div>
+                        <div class="course-content">
+                            <h3>ABC Adventures</h3>
+                            <p>Learn the alphabet through fun stories and games</p>
+                            <button class="btn btn-secondary">View Course</button>
+                        </div>
+                    </div>
+                    <div class="course-card">
+                        <div class="course-image">
+                            <img src="assets/images/course-numbers.svg" alt="Numbers course">
+                        </div>
+                        <div class="course-content">
+                            <h3>Number Explorers</h3>
+                            <p>Discover numbers and basic math in an exciting way</p>
+                            <button class="btn btn-secondary">View Course</button>
+                        </div>
+                    </div>
+                    <div class="course-card">
+                        <div class="course-image">
+                            <img src="assets/images/course-colors.svg" alt="Colors course">
+                        </div>
+                        <div class="course-content">
+                            <h3>Color World</h3>
+                            <p>Learn about colors through creative activities</p>
+                            <button class="btn btn-secondary">View Course</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="assets/images/logo-small.svg" alt="Educational Platform Logo">
+                    <p>KidsLearn</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="courses.html">Courses</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <p>Email: info@kidslearn.com</p>
+                    <p>Phone: (123) 456-7890</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 KidsLearn. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Login</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="loginEmail">Email</label>
+                    <input type="email" id="loginEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <input type="password" id="loginPassword" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Login</button>
+            </form>
+            <p class="text-center">Don't have an account? <a href="#" id="showRegister">Register</a></p>
+        </div>
+    </div>
+
+    <!-- Register Modal -->
+    <div id="registerModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Register</h2>
+            <form id="registerForm">
+                <div class="form-group">
+                    <label for="registerName">Full Name</label>
+                    <input type="text" id="registerName" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerEmail">Email</label>
+                    <input type="email" id="registerEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerPassword">Password</label>
+                    <input type="password" id="registerPassword" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Register</button>
+            </form>
+            <p class="text-center">Already have an account? <a href="#" id="showLogin">Login</a></p>
+        </div>
+    </div>
+
+    <script src="js/auth.ts"></script>
+    <script src="js/main.ts"></script>
+</body>
+</html>

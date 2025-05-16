@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Educational Platform for Kids</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/dashboard.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="dashboard-header">
+        <div class="container">
+            <div class="logo">
+                <img src="assets/images/logo.svg" alt="Educational Platform Logo">
+                <h1>KidsLearn</h1>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="dashboard.html" class="active">Dashboard</a></li>
+                    <li><a href="my-courses.html">My Courses</a></li>
+                    <li><a href="achievements.html">Achievements</a></li>
+                </ul>
+            </nav>
+            <div class="user-menu">
+                <div class="user-avatar">
+                    <img src="assets/images/avatar-placeholder.svg" alt="User Avatar" id="userAvatar">
+                </div>
+                <div class="user-dropdown">
+                    <ul>
+                        <li><a href="profile.html">My Profile</a></li>
+                        <li><a href="settings.html">Settings</a></li>
+                        <li><a href="#" id="logoutBtn">Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="dashboard-main">
+        <div class="container">
+            <div class="dashboard-welcome">
+                <h2>Welcome back, <span id="userName">Student</span>!</h2>
+                <p>Continue your learning journey</p>
+            </div>
+
+            <div class="dashboard-stats">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <img src="assets/icons/courses.svg" alt="Courses icon">
+                    </div>
+                    <div class="stat-content">
+                        <h3>My Courses</h3>
+                        <p class="stat-number" id="coursesCount">3</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <img src="assets/icons/lessons.svg" alt="Lessons icon">
+                    </div>
+                    <div class="stat-content">
+                        <h3>Lessons Completed</h3>
+                        <p class="stat-number" id="lessonsCount">12</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <img src="assets/icons/stars.svg" alt="Stars icon">
+                    </div>
+                    <div class="stat-content">
+                        <h3>Stars Earned</h3>
+                        <p class="stat-number" id="starsCount">48</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dashboard-continue">
+                <h3>Continue Learning</h3>
+                <div class="continue-cards">
+                    <div class="continue-card">
+                        <div class="continue-image">
+                            <img src="assets/images/course-alphabet.svg" alt="Alphabet course">
+                        </div>
+                        <div class="continue-content">
+                            <h4>ABC Adventures</h4>
+                            <p>Lesson 3: Letter C</p>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 25%"></div>
+                            </div>
+                            <button class="btn btn-primary" data-course-id="1" data-lesson-id="3">Continue</button>
+                        </div>
+                    </div>
+                    <div class="continue-card">
+                        <div class="continue-image">
+                            <img src="assets/images/course-numbers.svg" alt="Numbers course">
+                        </div>
+                        <div class="continue-content">
+                            <h4>Number Explorers</h4>
+                            <p>Lesson 2: Counting to 10</p>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 15%"></div>
+                            </div>
+                            <button class="btn btn-primary" data-course-id="2" data-lesson-id="2">Continue</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dashboard-recommended">
+                <h3>Recommended for You</h3>
+                <div class="recommended-cards">
+                    <div class="course-card">
+                        <div class="course-image">
+                            <img src="assets/images/course-colors.svg" alt="Colors course">
+                        </div>
+                        <div class="course-content">
+                            <h4>Color World</h4>
+                            <p>Learn about colors through creative activities</p>
+                            <button class="btn btn-secondary" data-course-id="3">Start Learning</button>
+                        </div>
+                    </div>
+                    <div class="course-card">
+                        <div class="course-image">
+                            <img src="assets/images/course-shapes.svg" alt="Shapes course">
+                        </div>
+                        <div class="course-content">
+                            <h4>Shape Discovery</h4>
+                            <p>Explore different shapes in our world</p>
+                            <button class="btn btn-secondary" data-course-id="4">Start Learning</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="assets/images/logo-small.svg" alt="Educational Platform Logo">
+                    <p>KidsLearn</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="dashboard.html">Dashboard</a></li>
+                        <li><a href="my-courses.html">My Courses</a></li>
+                        <li><a href="achievements.html">Achievements</a></li>
+                        <li><a href="help.html">Help</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <p>Email: support@kidslearn.com</p>
+                    <p>Phone: (123) 456-7890</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 KidsLearn. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/auth.ts"></script>
+    <script src="js/dashboard.ts"></script>
+</body>
+</html>
