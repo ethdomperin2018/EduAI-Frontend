@@ -1,7 +1,6 @@
 "use client"
 
 import type React from "react"
-
 import { useState } from "react"
 import { useRouter } from "next/navigation"
 import Link from "next/link"
@@ -10,6 +9,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { createClient } from "@/lib/supabase/client"
+import { Alert, AlertDescription } from "@/components/ui/alert"
 
 const supabase = createClient()
 
@@ -26,7 +26,7 @@ export default function LoginPage() {
     setError(null)
 
     try {
-      const { error } = await supabase.auth.signInWithPassword({
+      const { data, error } = await supabase.auth.signInWithPassword({
         email,
         password,
       })
@@ -35,8 +35,15 @@ export default function LoginPage() {
         throw error
       }
 
-      router.push("/dashboard")
-      router.refresh()
+      if (data.user) {
+        if (!data.user.email_confirmed_at) {
+          setError("Please confirm your email address before logging in.")
+          return
+        }
+
+        router.push("/dashboard")
+        router.refresh()
+      }
     } catch (error: any) {
       setError(error.message || "An error occurred during login")
     } finally {
@@ -53,7 +60,11 @@ export default function LoginPage() {
         </CardHeader>
         <form onSubmit={handleLogin}>
           <CardContent className="space-y-4">
-            {error && <div className="rounded-md bg-destructive/15 p-3 text-sm text-destructive">{error}</div>}
+            {error && (
+              <Alert variant="destructive">
+                <AlertDescription>{error}</AlertDescription>
+              </Alert>
+            )}
             <div className="space-y-2">
               <Label htmlFor="email">Email</Label>
               <Input

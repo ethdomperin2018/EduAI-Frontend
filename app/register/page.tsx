@@ -1,7 +1,6 @@
 "use client"
 
 import type React from "react"
-
 import { useState } from "react"
 import { useRouter } from "next/navigation"
 import Link from "next/link"
@@ -11,6 +10,7 @@ import { Label } from "@/components/ui/label"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { createClient } from "@/lib/supabase/client"
+import { Alert, AlertDescription } from "@/components/ui/alert"
 
 const supabase = createClient()
 
@@ -21,6 +21,7 @@ export default function RegisterPage() {
   const [role, setRole] = useState("student")
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
+  const [success, setSuccess] = useState(false)
   const router = useRouter()
 
   const handleRegister = async (e: React.FormEvent) => {
@@ -29,7 +30,6 @@ export default function RegisterPage() {
     setError(null)
 
     try {
-      // Register with Supabase Auth
       const { data: authData, error: authError } = await supabase.auth.signUp({
         email,
         password,
@@ -38,6 +38,7 @@ export default function RegisterPage() {
             full_name: fullName,
             role,
           },
+          emailRedirectTo: `${window.location.origin}/auth/callback`,
         },
       })
 
@@ -60,14 +61,33 @@ export default function RegisterPage() {
           throw profileError
         }
 
-        router.push("/dashboard")
-        router.refresh()
+        setSuccess(true)
       }
     } catch (error: any) {
       setError(error.message || "An error occurred during registration")
     } finally {
       setLoading(false)
     }
+  }
+
+  if (success) {
+    return (
+      <div className="flex min-h-screen items-center justify-center px-4 py-12">
+        <Card className="w-full max-w-md">
+          <CardHeader>
+            <CardTitle className="text-2xl">Check Your Email</CardTitle>
+            <CardDescription>
+              We&apos;ve sent you a confirmation email. Please check your inbox and follow the instructions to verify your account.
+            </CardDescription>
+          </CardHeader>
+          <CardFooter>
+            <Link href="/login" className="w-full">
+              <Button className="w-full">Go to Login</Button>
+            </Link>
+          </CardFooter>
+        </Card>
+      </div>
+    )
   }
 
   return (
@@ -79,7 +99,11 @@ export default function RegisterPage() {
         </CardHeader>
         <form onSubmit={handleRegister}>
           <CardContent className="space-y-4">
-            {error && <div className="rounded-md bg-destructive/15 p-3 text-sm text-destructive">{error}</div>}
+            {error && (
+              <Alert variant="destructive">
+                <AlertDescription>{error}</AlertDescription>
+              </Alert>
+            )}
             <div className="space-y-2">
               <Label htmlFor="fullName">Full Name</Label>
               <Input id="fullName" value={fullName} onChange={(e) => setFullName(e.target.value)} required />
