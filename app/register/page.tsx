@@ -38,7 +38,7 @@ export default function RegisterPage() {
             full_name: fullName,
             role,
           },
-          emailRedirectTo: `${window.location.origin}/auth/callback`,
+          emailRedirectTo: `${window.location.origin}/login`,
         },
       })
 
